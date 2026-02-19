@@ -1,0 +1,11 @@
+{
+  "name": "recipe-exchange-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Recipe Exchange Platform",
+  "scripts": {
+    "dev": "live-server --port=8080 --host=localhost --open=/"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
