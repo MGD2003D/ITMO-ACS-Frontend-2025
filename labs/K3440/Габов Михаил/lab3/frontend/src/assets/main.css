@@ -309,3 +309,82 @@ footer p { opacity: 0.7; font-size: 0.9rem; }
 
 html { scroll-behavior: smooth; }
 ::selection { background: rgba(0, 184, 148, 0.2); color: var(--primary); }
+
+/* ===================== DARK THEME ===================== */
+[data-theme="dark"] {
+    --primary: #e8eaed;
+    --primary-light: #9aa0a6;
+    --bg: #0f1117;
+    --card-bg: #1e2030;
+    --text: #e8eaed;
+    --text-muted: #6b7280;
+    --border: #2d3250;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    color: var(--text);
+    background-color: var(--card-bg);
+}
+[data-theme="dark"] .form-control::placeholder { color: var(--text-muted); }
+
+[data-theme="dark"] .card-header {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, #252838 0%, #0a0a0a 100%);
+}
+
+[data-theme="dark"] footer {
+    background: #0a0c14 !important;
+}
+
+[data-theme="dark"] .btn-outline-primary:hover {
+    color: var(--bg);
+}
+
+[data-theme="dark"] .alert-success {
+    background: rgba(0, 184, 148, 0.15);
+    color: #00e5b0;
+}
+[data-theme="dark"] .alert-danger {
+    background: rgba(214, 48, 49, 0.15);
+    color: #ff6b6b;
+}
+
+/* Smooth theme transition */
+body,
+.navbar,
+.card,
+.form-control,
+.form-select,
+.auth-card,
+.filter-section,
+.recipe-detail-header,
+.step-item,
+.comment-item,
+.profile-header,
+.profile-card {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--primary-light) !important;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    line-height: 1;
+}
+.theme-toggle-btn:hover {
+    color: var(--accent) !important;
+    background: rgba(0, 184, 148, 0.08);
+}

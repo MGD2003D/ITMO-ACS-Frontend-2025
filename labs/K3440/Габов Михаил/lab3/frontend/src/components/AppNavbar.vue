@@ -34,6 +34,15 @@
               <i class="bi bi-box-arrow-right me-1"></i>Logout
             </button>
           </li>
+          <li class="nav-item d-flex align-items-center">
+            <button
+              class="theme-toggle-btn"
+              @click="toggleTheme"
+              :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+            >
+              <i :class="theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill'"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -44,9 +53,11 @@
 import { computed } from 'vue'
 import { useAuthStore } from '../stores/auth'
 import { useAuth } from '../composables/useAuth'
+import { useTheme } from '../composables/useTheme'
 
 const store = useAuthStore()
 const { logout } = useAuth()
+const { theme, toggleTheme } = useTheme()
 const isAuthenticated = computed(() => store.isAuthenticated)
 const currentUser = computed(() => store.currentUser)
 </script>
